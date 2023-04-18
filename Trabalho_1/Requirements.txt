@@ -1,0 +1,42 @@
+Sistema de gerenciamento de biblioteca em java
+
+Livros
+Usuarios
+  -nome
+  -cpf
+  -Endereco
+  +Cliente
+    *Faz reservas
+    +Funcionario
+      *Gerencia Livros, Emprestimos e usuarios
+      +ADM
+        *Gerencia funcionarios
+Emprestimos
+  -Lista<Livros>
+  -dataEmprestimo
+  -dataDevolucao
+  -Cliente
+  NOTA: No controle de devolucao, todos os livros sao devolvidos em 7 dias, dataDevolucao armazena quando o livro foi devolvido.
+  
+Biblioteca
+  -Lista<Usuarios>
+  -Lista<Emprestimos>
+  -Lista<Livros>
+  -Lista<Enderecos>
+  *Cadastrar e Remover Usuarios, Emprestimos, Livros e Enderecos
+  *Atualizar Listas Usuarios
+  *Buscar em todas as listas permitindo filtros
+
+Endereco
+  -uf
+  -cidade
+  -rua
+  -numero
+  -complemento
+  *getEnderecoCompleto
+  
+Fazer documentação dessa caralha. Puta que pariu.
+
++ = extends
+- = atributo
+* = funcionalidade
