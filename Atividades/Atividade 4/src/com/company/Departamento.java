@@ -14,23 +14,23 @@ public class Departamento<T extends FuncionarioControlavel>{
         this.gerentes = new ArrayList<>();
     }
 
-    public void AddFuncionario(T funcionario, Gerente gerente){
+    public void addFuncionario(T funcionario, Gerente gerente){
         funcionariosBativeis.add(funcionario);
         gerentes.add(gerente);
     }
 
-    public List<Funcionario> ListarFuncionarios(){
+    public List<Funcionario> listarFuncionarios(){
         List<Funcionario> funcionarios = new ArrayList<>(funcionariosBativeis);
         funcionarios.addAll(gerentes);
 
         return funcionarios;
     }
 
-    public List<FuncionarioControlavel> ListarAtrasados(float horarioLimite){
+    public List<FuncionarioControlavel> listarAtrasados(float horarioLimite){
         List<FuncionarioControlavel> atrasados= new ArrayList<>();
 
         for(FuncionarioControlavel funcionario : funcionariosBativeis){
-            if (funcionario.ID > horarioLimite){
+            if (funcionario.horarioEntrada > horarioLimite){
                 atrasados.add(funcionario);
             }
         }
